@@ -1,0 +1,10 @@
+big
+data
+big
+spark
+scla
+spark
+hadoop
+haddop
+hive
+spark

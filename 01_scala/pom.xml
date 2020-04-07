@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>scalaStudy</artifactId>
+        <groupId>com.dotime</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>01_scala</artifactId>
+
+
+    <properties>
+        <!-- 	<spark.version>1.3.1</spark.version> -->
+        <!--
+                <scala.version>2.10.6</scala.version>
+        -->
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <encoding>UTF-8</encoding>
+        <scala.compat.version>2.11</scala.compat.version>
+        <flink.version>1.9.0</flink.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.sourceVersion>1.8</project.build.sourceVersion>
+        <project.build.targetVersion>1.8</project.build.targetVersion>
+        <java.version>1.8</java.version>
+        <scala.version>2.11.12</scala.version>
+        <cdh.verion>2.6.0-cdh5.13.1</cdh.verion>
+        <flink.version>1.9.0</flink.version>
+        <!--<flink.version>1.7.2</flink.version>-->
+        <junit.version>4.12</junit.version>
+        <fastjson.version>1.2.58</fastjson.version>
+        <mysql.version>5.1.45</mysql.version>
+        <hbase.version>1.2.0-cdh5.13.0</hbase.version>
+        <kudu.version>1.5.0-cdh5.13.1</kudu.version>
+        <!-- <mysql.version>8.0.16</mysql.version>-->
+        <es.version>6.2.1</es.version>
+        <impala.jdbc.version>2.6.3</impala.jdbc.version>
+        <hive.jdbc.version>1.1.0-cdh5.13.1</hive.jdbc.version>
+
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.cloudera</groupId>
+            <artifactId>ImpalaJDBC41</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.codis.jodis</groupId>
+            <artifactId>jodis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
+
+    </dependencies>
+
+
+    <build>
+        <sourceDirectory>src/main/scala</sourceDirectory>
+         <resources>
+            <resource>
+                <directory>resources</directory>
+                <excludes>
+                    <exclude>dev/*</exclude>
+                    <exclude>fat/*</exclude>
+                    <exclude>prod/*</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>resources/${profiles.active}</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <!--<artifactSet>
+                                <excludes>
+                                    <exclude>org.apache.flink:flink-core</exclude>
+                                    <exclude>org.apache.flink:flink-clients_2.11</exclude>
+                                    <exclude>org.apache.flink:flink-scala_2.11</exclude>
+                                    <exclude>org.apache.flink:flink-streaming-scala_2.11</exclude>
+                                    <exclude>org.apache.flink:flink-connector-filesystem_2.11</exclude>
+                                    <exclude>org.apache.flink:flink-runtime-web_2.11</exclude>
+                                    <exclude>org.apache.hadoop:*</exclude>
+                                    <exclude>xml-apis:xml-apis</exclude>
+                                </excludes>
+                            </artifactSet>-->
+                            <filters>
+                                <!-- 过滤掉以下文件，不打包 ：解决包重复引用导致的打包错误-->
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                        <exclude>core-site.xml</exclude>
+                                        <exclude>hdfs-site.xml</exclude>
+                                        <exclude>scripts/*</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <!-- 打成可执行的jar包 的主方法入口-->
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass></mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

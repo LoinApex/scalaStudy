@@ -1,0 +1,34 @@
+
+达内课程笔记
+
+
+1.基础知识
+创建对象主要有3类
+1、*Object 程序的入口main主函数，相当于单例类，相当于java中静态方法(object div -> public final class Div)
+2、Class 定义对象/*case Class 内部已经序列化而且直接有toString/equals等方法
+3、Trait 类似于java中的抽象类，类似实现多继承
+
+> scala使用简单数据类型,在大数据场景中节省资源
+
+https://www.yiibai.com/scala/scala_lists.html
+Scala列表与数组非常相似，列表的所有元素都具有相同的类型，但有两个重要的区别。
+首先，列表是不可变的，列表的元素不能通过赋值来更改。
+其次，列表表示一个链表，而数组是平的。
+
+
+2.高阶函数
+高阶函数（Higher-Order Function）就是操作其他函数的函数。
+https://www.runoob.com/scala/scala-functions.html
+函数/方法:函数可以作为一个参数传递,方法不行
+scala高阶函数天然支持分布式运行
+
+
+
+
+
+
+
+
+
+
+
