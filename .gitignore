@@ -1,0 +1,27 @@
+######################
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+#####################
+# Java Ignore files #
+#####################
+*.class
+
+##########################
+# Jetbrains Ignore files #
+##########################
+*.iml
+.idea/
+
+/01_scala/target/classes/
+/05_spark/target/classes/
+/01_scala/target/classes/
+/01_scala/target/classes/
+/01_scala/target/classes/
