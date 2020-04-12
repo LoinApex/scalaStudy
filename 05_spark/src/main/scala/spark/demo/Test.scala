@@ -1,4 +1,4 @@
-package itcast.scala.bigdata.spark
+package spark.demo
 
 class Test {
   

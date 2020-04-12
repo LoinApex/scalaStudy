@@ -1,4 +1,4 @@
-package itcast.scala.bigdata.spark
+package spark.demo
 
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext

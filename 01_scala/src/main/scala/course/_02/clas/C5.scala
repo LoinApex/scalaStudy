@@ -1,4 +1,4 @@
-package feng
+package course._02.clas
 
 class C5 {
   pointtooaa =>

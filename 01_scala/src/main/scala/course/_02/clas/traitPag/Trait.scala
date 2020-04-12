@@ -1,4 +1,4 @@
-package traitPag
+package course._02.clas.traitPag
 
 trait Trait {
 

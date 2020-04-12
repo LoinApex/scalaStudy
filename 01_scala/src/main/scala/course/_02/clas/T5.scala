@@ -1,4 +1,4 @@
-package feng
+package course._02.clas
 
 object T5 {
   def main(args: Array[String]) {

@@ -6,9 +6,9 @@ object ArrayTest2 {
 
   def main(args: Array[String]) {
     /**
-      * 数组
-      * Int类型初始化为0 String初始化为null
-      */
+     * 数组
+     * Int类型初始化为0 String初始化为null
+     */
 
     //定长
     val aa = new Array[Int](10)
@@ -82,8 +82,8 @@ object ArrayTest2 {
 
 
     /**
-      * 推荐使用数组遍历方式
-      */
+     * 推荐使用数组遍历方式
+     */
     var intArrayVar = ArrayBuffer(1, 1, 2)
     for (i <- intArrayVar) println("Array Element: " + i)
 

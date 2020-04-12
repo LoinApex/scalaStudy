@@ -1,4 +1,4 @@
-package course._02.hiFun
+package course._03.hiFun
 
 object T0 {
 

@@ -1,10 +1,14 @@
 big
 data
+hive
 big
+hadoop
 spark
 scla
 spark
 hadoop
-haddop
+hadoop
+hadoop
+hive
 hive
 spark
