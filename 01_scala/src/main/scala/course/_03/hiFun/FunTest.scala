@@ -160,8 +160,9 @@ class FunTest {
 
   @Test
   def test: Unit = {
-    println("----filter过滤-----")
     val list = List(1, 2, 3, 4, 5, 6)
+
+    println("----filter过滤-----")
     list.filter { x => x % 2 == 1 }.foreach(x => println(x))
 
     println("----flatte拍扁-----")

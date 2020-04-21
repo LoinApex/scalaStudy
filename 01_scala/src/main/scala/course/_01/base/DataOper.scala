@@ -6,7 +6,7 @@ import scala.collection.mutable
 
 class DataOper {
   @Test
-  def t1(): Unit = {
+  def strTest(): Unit = {
     //    字符串使用
 
     val a = 10
@@ -28,6 +28,9 @@ class DataOper {
 
   }
 
+  /**
+   * map操作
+   */
   @Test
   def t11() {
 
@@ -36,9 +39,7 @@ class DataOper {
      * 包含 一组 键值对 元素的集合
      * 只是一个对应的查询，类似于指针
      */
-
     val Z = Map(1 -> 2, 5 -> 4, 3 -> 5)
-
     val a = Z(1)
     println(a)
 
@@ -57,15 +58,14 @@ class DataOper {
     println(W.contains(3))
 
 
-
     //  映射的枚举
     for ((i, j) <- Z) print(i, j) // 操作
-    // 互换映射的键值
+    // 互换映射的键值
     for ((i, j) <- Z) yield (j, i)
-    // 获取映射内键的集合或值的集合
+    // 获取映射内键的集合或值的集合
     val e = Z.keySet
     val f = Z.values
-    // 可以利用for表达式只枚举映射的键或者集合
+    // 可以利用for表达式只枚举映射的键或者集合
 
     /**
      * 元祖
@@ -91,14 +91,12 @@ class DataOper {
 
   }
 
+  /**
+   * 循环
+   *
+   */
   @Test
   def t2: Unit = {
-    /**
-     * <b>
-     * 循环
-     * </b>
-     *
-     */
 
     //   scala中的集合分为两种，一种是可变的集合，另一种是不可变的集合
     //可变的集合可以更新或修改，添加、删除、修改元素将作用于原集合
@@ -129,10 +127,27 @@ class DataOper {
     }
     println("==================")
 
-    /**
-     * yield 把每次枚举值保存在集合中
-     */
+    val numList = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
+    // for 循环
+    val retVal = for {
+      a <- numList
+      if a != 3; if a < 8
+    } yield a
+
+    // 输出返回值
+    for (a <- retVal) {
+      println("Value of a: " + a);
+    }
+
+
+  }
+
+  /**
+   * yield 把每次枚举值保存在集合中
+   */
+  @Test
+  def yiedTest: Unit = {
     val No =
       for (i <- 1 to 4)
         yield i
@@ -152,37 +167,39 @@ class DataOper {
     for (i <- 1 to 2) yield i.toChar;
     for (i <- 1 to 2; j <- "HELLO") yield (i + j).toChar
 
-    println("<<<<<<<<<<<<<<<<<<<<< ");
+  }
 
-    val numList = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-    // for 循环
-    val retVal = for {
-      a <- numList
-      if a != 3; if a < 8
-    } yield a
-
-    // 输出返回值
-    for (a <- retVal) {
-      println("Value of a: " + a);
-    }
+  /**
+   * 循环
+   */
+  @Test
+  def forTest: Unit = {
 
 
-    /**
-     * 队列操作
-     * http://blog.csdn.net/lovehuangjiaju/article/details/46984575
-     */
+  }
+
+  /**
+   * 队列操作
+   * http://blog.csdn.net/lovehuangjiaju/article/details/46984575
+   */
+  @Test
+  def queTest: Unit = {
     val que = scala.collection.mutable.Queue(1, 2, 3)
     que.enqueue(4) //入队
     println(que.toList)
     println(que.dequeue())
     println(que.toList)
+  }
 
 
+  /**
+   * 栈操作
+   */
+  @Test
+  def t22: Unit = {
     println("-------------stack------------")
-    /**
-     * 栈操作
-     */
+
+
     val sta = new mutable.Stack[Int]
     sta.push(1)
     sta.push(2) //入栈
@@ -191,6 +208,21 @@ class DataOper {
     sta.foreach(print)
     println("pop  " + sta.pop) //出栈
     sta.foreach(print)
+  }
+
+
+  /**
+   * 元组
+   * 与列表一样，元组也是不可变的，但与列表不同的是元组可以包含不同类型的元素。
+   */
+  @Test
+  def tupleTest: Unit = {
+    val t = (4, 3, 2, "上海")
+    val t1 = new Tuple3(1, 3.14, "Fred")
+
+    t.productIterator.foreach { i => println("Value = " + i) }
+    println(t1._3)
+
 
   }
 }

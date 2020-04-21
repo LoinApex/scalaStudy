@@ -24,11 +24,30 @@ scala高阶函数天然支持分布式运行
 
 
 
+4.Thread
+Future
+scala.concurrent 包里的 Future[T] 是一个容器类型，代表一种返回值类型为 T 的计算。
+计算可能会出错，也可能会超时；从而，当一个 future 完成时，它可能会包含异常，而不是你期望的那个值。
+Future 只能写一次： 当一个 future 完成后，它就不能再被改变了。
+同时，Future 只提供了读取计算值的接口，写入计算值的任务交给了 Promise，这样，API 层面上会有一个清晰的界限。
 
+Promise
+val f: Future[String] = future { "Hello World!" }
+f: scala.concurrent.Future[String] = scala.concurrent.impl.Promise$DefaultPromise@2b509249
 
+ 得到的对象是一个 DefaultPromise ，它实现了 Future 和 Promise 接口
 
+https://windor.gitbooks.io/beginners-guide-to-scala/content/chp8-welcome-to-the-future.html
 
+5. actor
+Actor实际就是一类用来通信的轻量级对象，每个Actor中维护自己的消息队列。
+Actor之间的交互都是基于发送消息来完成，而不是采用阻塞的处理形式。
+Actor是对并发写入以及分布式的高度抽象。
+可以把Actor理解为一群人，他们都有自己的一个邮箱，这群人之间通过发送邮件消息来完成。将要执行的大任务的分解成足够小任务，派发给多个Actor来完成。
+Actor比线程更轻量、在scala中可以创建数以百万计的Actor对象，奥秘在于Actor可以复用线程。基于事件机制，监听消息。
 
+示例中使用代码和配置文件两种方式远程通信
+pom文件中只需要指定:akka-remote 依赖, 否则会抛出版本不一致异常
 
 
 
