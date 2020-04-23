@@ -1,8 +1,7 @@
-package course._05.actor
+package course._05.actor.conf
 
 import akka.actor.{Actor, ActorSystem, Props}
 import com.typesafe.config.ConfigFactory
-
 
 //测试远程Actor 配置文件方式
 object ReActorServerConf {
@@ -20,4 +19,3 @@ object ReActorServerConf {
     //访问地址akka.tcp://ActorSystem名称@IP:端口/user/im      [akka.tcp://master@127.0.0.1:2555]
   }
 }
-

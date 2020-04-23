@@ -1,4 +1,4 @@
-package course._05.actor
+package course._05.actor.conf
 
 import akka.actor.ActorSystem
 import com.typesafe.config.ConfigFactory

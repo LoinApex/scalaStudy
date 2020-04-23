@@ -1,4 +1,4 @@
-package course._03.hiFun
+package course._03.fun
 
 import java.io.PrintWriter
 

@@ -1,8 +1,7 @@
-package course._05.actor
+package course._05.actor.comm
 
 import akka.actor.ActorSystem
 import com.typesafe.config.ConfigFactory
-
 
 object RemoteActorClient {
   def main(args: Array[String]): Unit = {

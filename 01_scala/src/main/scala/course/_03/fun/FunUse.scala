@@ -1,4 +1,4 @@
-package course._03.hiFun
+package course._03.fun
 
 import org.junit.Test
 
@@ -12,6 +12,7 @@ class FunUse {
     (x: Int) => println(x + y)
 
   }
+
 
 
   /**

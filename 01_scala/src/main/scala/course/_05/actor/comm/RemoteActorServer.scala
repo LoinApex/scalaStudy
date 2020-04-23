@@ -1,9 +1,7 @@
-package course._05.actor
+package course._05.actor.comm
 
-import akka.actor.ActorSystem
+import akka.actor.{Actor, ActorSystem, Props}
 import com.typesafe.config.ConfigFactory
-import akka.actor.Props
-import akka.actor.Actor
 
 
 //测试远程Actor
@@ -29,8 +27,11 @@ object RemoteActorServer {
     conf.put("akka.remote.netty.tcp.hostname", IP)
     conf.put("akka.remote.netty.tcp.port", PORT)
 
-    val sys = ActorSystem("master", ConfigFactory.parseMap(conf))//以map方式读取配置文件
+
+    val sys = ActorSystem("master", ConfigFactory.parseMap(conf)) //以map方式读取配置文件
+    //    Create new actor as child of this context with the given name
     sys.actorOf(Props[ActorRm], "im") //设定Actor的名字
+
     //访问地址akka.tcp://ActorSystem名称@IP:端口/user/im      [akka.tcp://master@127.0.0.1:2550]
   }
 }
