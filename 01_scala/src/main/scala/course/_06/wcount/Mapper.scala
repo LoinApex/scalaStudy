@@ -1,4 +1,4 @@
-package course._06.wc.cons
+package course._06.wcount
 
 import akka.actor.ActorSelection.toScala
 import akka.actor.{Actor, ActorSelection, ActorSystem, Props}

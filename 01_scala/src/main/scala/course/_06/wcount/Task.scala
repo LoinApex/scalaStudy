@@ -1,4 +1,4 @@
-package course._06.wc.cons
+package course._06.wcount
 
 class Task {
 }

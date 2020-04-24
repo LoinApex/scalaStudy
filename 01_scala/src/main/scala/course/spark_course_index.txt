@@ -8,6 +8,7 @@
 2、Class 定义对象/*case Class 内部已经序列化而且直接有toString/equals等方法
 3、Trait 类似于java中的抽象类，类似实现多继承
 
+>类名相同的对象叫做伴生对象，类和伴生对象之间可以相互访问私有的方法和属性。
 > scala使用简单数据类型,在大数据场景中节省资源
 
 https://www.yiibai.com/scala/scala_lists.html
