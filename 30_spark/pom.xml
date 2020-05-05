@@ -106,7 +106,7 @@
         <dependency>
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1.1</version>
             <type>pom</type>
         </dependency>
         <dependency>
