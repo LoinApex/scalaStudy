@@ -41,12 +41,12 @@ class FileOper {
    * @param dir
    * @return
    */
-  def subdirs(dir: File): Iterator[File] = {
+  def  listSubDirs(dir: File): Iterator[File] = {
     val d = dir.listFiles.filter(_.isDirectory)
     val f = dir.listFiles.filter(_.isFile).toIterator
-    f ++ d.toIterator.flatMap(subdirs _)
+    f ++ d.toIterator.flatMap(listSubDirs _)
 
-    //    FileUtils.listFilesAndDirs(file)
+    //       val files = FileUtils.listFilesAndDirs(path, TrueFileFilter.INSTANCE, DirectoryFileFilter.INSTANCE)
   }
 
   /**
@@ -81,6 +81,9 @@ class FileOper {
     for (line <- Source.fromFile(file, "UTF-8").getLines) {
       println(line);
     }
+//  指定中文
+//     Source.fromFile(file, "ISO-8859-1").getLines()
+
     println("============")
     //file.getLines()返回的是一个Iterator
     val lines = Source.fromFile(file).getLines.toList;

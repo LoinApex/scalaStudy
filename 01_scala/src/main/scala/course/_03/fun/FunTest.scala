@@ -132,8 +132,24 @@ class FunTest {
 
   }
 
+val wordMany="D:\\ProWork\\aa\\wordMany.txt"
+
+  /**
+   * spark scala
+   * demo spark
+   * hadoop demo
+   * hadoop
+   * scala demo
+   */
+  @Test
+  def wordsCount4: Unit = {
+
+    val list = Source.fromFile(wordMany).getLines()
 
 
+
+
+  }
 
 
   /**

@@ -10,8 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>01_scala</module>
-        <module>08_Util</module>
-        <module>05_spark</module>
+        <module>80_Util</module>
+        <module>30_spark</module>
     </modules>
 
 
@@ -181,11 +181,11 @@
                 <artifactId>common-util</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
+           <!-- <dependency>
                 <groupId>cn.csg.deltalake</groupId>
                 <artifactId>log-stream</artifactId>
                 <version>${project.version}</version>
-            </dependency>
+            </dependency>-->
 
             <dependency>
                 <groupId>org.apache.poi</groupId>
