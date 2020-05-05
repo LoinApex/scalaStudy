@@ -103,10 +103,10 @@ class AssOper {
 
     //{aa,1}
 
-    var listr=List[String]
+//    var listr=List[String]
 //    val unit = Source.fromFile(filepath, "UTF-16").getLines().foreach(_ ->lineDelListR(_,listr))
 
-     println(unit)
+     println( )
 
   }
 
@@ -131,4 +131,10 @@ class AssOper {
     println(str)
 
   }
+  @Test
+  def a11a: Unit = {
+
+  print("dsfldjflsjd")
+  }
+
 }
