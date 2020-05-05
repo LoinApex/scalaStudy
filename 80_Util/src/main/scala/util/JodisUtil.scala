@@ -6,11 +6,11 @@ import redis.clients.jedis.JedisPoolConfig
 
 /*
  * 描述信息  
- * User: Qing  
+ *   
  * Date 2019/12/24
  * Version 1.0  
  */
-object JodisUtil  {
+object JodisUtil {
 
   private val jedisPoolConfig = new JedisPoolConfig()
   jedisPoolConfig.setMaxTotal(1000)
@@ -30,13 +30,13 @@ object JodisUtil  {
     .build()
 
 
-  def getJedis()=jedisPool.getResource()
+  def getJedis() = jedisPool.getResource()
 
 
   def main(args: Array[String]): Unit = {
     //val map=getJedis().hkeys("DIM:WIDE:JLD_DJMX")
-   // val map=getJedis().hgetAll("DIM:WIDE:JLD_DJMX")
-    val v=getJedis().get("foo")
+    // val map=getJedis().hgetAll("DIM:WIDE:JLD_DJMX")
+    val v = getJedis().get("foo")
     println(v)
   }
 }

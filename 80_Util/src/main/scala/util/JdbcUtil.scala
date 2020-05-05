@@ -8,7 +8,7 @@ import scala.collection.mutable.ArrayBuffer
 
 /*
  * 描述信息  
- * User: Qing  
+ *   
  * Date 2019/7/15
  * Version 1.0  
  */

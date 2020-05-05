@@ -4,7 +4,7 @@ import snowflake.Sequence
 
 /*
  * 描述信息  
- * User: Qing  
+ *   
  * Date 2019/5/14
  * Version 1.0  
  */
