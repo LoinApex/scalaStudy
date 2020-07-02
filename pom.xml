@@ -25,7 +25,7 @@
         <cdh.verion>2.6.0-cdh5.13.1</cdh.verion>
         <!--<flink.version>1.7.2</flink.version>-->
         <fastjson.version>1.2.58</fastjson.version>
-        <mysql.version>5.1.45</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <hbase.version>1.2.0-cdh5.13.0</hbase.version>
         <kudu.version>1.5.0-cdh5.13.1</kudu.version>
         <!-- <mysql.version>8.0.16</mysql.version>-->
